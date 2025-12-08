@@ -7,15 +7,11 @@
  *
  */
 
-namespace HivePHP;
+return [
+    'views_path' => ROOT . '/views',
+    'cache_path' => ROOT . '/storage/cache/views',
+    'debug' => true,
+    'auto_reload' => true,
+];
 
-class Bootstrap
-{
-    /**
-     * @return void
-     */
-    public static function run(): void
-    {
-        echo "Hello World!";
-    }
-}
+ 
