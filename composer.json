@@ -1,0 +1,19 @@
+{
+  "name": "vendor_name/oldvkdev",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "HivePHP",
+      "email": "lovlyengine@gmail.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "HivePHP\\": "core/"
+    }
+  }
+}
