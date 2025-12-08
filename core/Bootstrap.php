@@ -6,16 +6,45 @@
  *   file that was distributed with this source code.
  *
  */
+declare(strict_types=1);
 
 namespace HivePHP;
 
 class Bootstrap
 {
+    protected array $providers = [
+        \HivePHP\Providers\ConfigServiceProvider::class,
+        \HivePHP\Providers\RouteServiceProvider::class,
+    ];
+
+    protected array $instances = [];
+
+    public function __construct(protected Container $container){}
+
     /**
      * @return void
      */
-    public static function run(): void
+    public function run(): void
     {
-        echo "Hello World!";
+        $this->registerProviders();
+        $this->bootProviders();
+    }
+
+    protected function registerProviders(): void
+    {
+        foreach ($this->providers as $providerClass) {
+            $provider = new $providerClass($this->container);
+            $provider->register($this->container);
+            $this->instances[] = $provider;
+        }
+    }
+
+    protected function bootProviders(): void
+    {
+        foreach ($this->instances as $provider) {
+            if(method_exists($provider, 'boot')){
+                $provider->boot($this->container);
+            }
+        }
     }
 }

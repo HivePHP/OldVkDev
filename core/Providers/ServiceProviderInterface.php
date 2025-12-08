@@ -8,14 +8,12 @@
  */
 declare(strict_types=1);
 
-use HivePHP\Bootstrap;
+namespace HivePHP\Providers;
+
 use HivePHP\Container;
 
-
-define('ROOT', dirname(__DIR__));
-
-require ROOT . '/vendor/autoload.php';
-
-$container = new Container();
-$bootstrap = new Bootstrap($container);
-$bootstrap->run();
+interface ServiceProviderInterface
+{
+    public function register(Container $container): void;
+    public function boot(Container $container): void;
+}
