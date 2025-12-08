@@ -6,6 +6,6 @@ class Bootstrap
 {
     public static function run()
     {
-        echo "Hello World!";
+        echo "Hello Worldппппп!";
     }
 }
