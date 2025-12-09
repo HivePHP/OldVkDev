@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* layout.twig */
+/* main.twig */
 class __TwigTemplate_40238c2a4dd7447230bf64b6689e1494 extends Template
 {
     private Source $source;
@@ -49,7 +49,9 @@ class __TwigTemplate_40238c2a4dd7447230bf64b6689e1494 extends Template
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
     <title>";
         // line 8
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["sitName"] ?? null), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["title"] ?? null), "html", null, true);
+        yield " - ";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["siteName"] ?? null), "html", null, true);
         yield "</title>
 </head>
 <body>
@@ -77,7 +79,7 @@ class __TwigTemplate_40238c2a4dd7447230bf64b6689e1494 extends Template
      */
     public function getTemplateName(): string
     {
-        return "layout.twig";
+        return "main.twig";
     }
 
     /**
@@ -93,7 +95,7 @@ class __TwigTemplate_40238c2a4dd7447230bf64b6689e1494 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  66 => 11,  60 => 12,  58 => 11,  52 => 8,  43 => 1,);
+        return array (  68 => 11,  62 => 12,  60 => 11,  52 => 8,  43 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -105,11 +107,11 @@ class __TwigTemplate_40238c2a4dd7447230bf64b6689e1494 extends Template
     <meta name=\"viewport\"
           content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
-    <title>{{ sitName }}</title>
+    <title>{{ title }} - {{ siteName }}</title>
 </head>
 <body>
     {% block content %}{% endblock %}
 </body>
-</html>", "layout.twig", "C:\\OSPanel\\domains\\oldvkdev\\views\\layout.twig");
+</html>", "main.twig", "C:\\OSPanel\\domains\\oldvkdev\\views\\main.twig");
     }
 }

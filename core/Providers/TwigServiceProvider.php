@@ -10,10 +10,10 @@ declare(strict_types=1);
 
 namespace HivePHP\Providers;
 
-use HivePHP\Container;
-use HivePHP\TwigFactory;
 use HivePHP\Configs;
-use HivePHP\AssetManager;
+use HivePHP\Container;
+use HivePHP\Services\TwigService;
+use HivePHP\Support\AssetManager;
 
 class TwigServiceProvider implements ServiceProviderInterface
 {
@@ -23,21 +23,22 @@ class TwigServiceProvider implements ServiceProviderInterface
         $container->set(AssetManager::class, fn() => new AssetManager());
 
         // Register TwigFactor
-        $container->set(TwigFactory::class, function() use ($container) {
+        $container->set(TwigService::class, function() use ($container) {
 
             /** @var Configs $configs */
             $configs = $container->get(Configs::class);
             $twigConfig = $configs->get('twig'); // берём twig конфиг
             $assetManager = $container->get(AssetManager::class);
 
-            return new TwigFactory($twigConfig, $assetManager);
+            return new TwigService($twigConfig, $assetManager);
         });
     }
 
     public function boot(Container $container): void
     {
-        /** @var TwigFactory $twigFactory */
+        /** @var TwigService $twigFactory */
         //$twigFactory = $container->get(TwigFactory::class);
         //$twig = $twigFactory->get();
+
     }
 }

@@ -6,6 +6,7 @@
  *   file that was distributed with this source code.
  *
  */
+
 declare(strict_types=1);
 
 namespace HivePHP;
@@ -13,18 +14,17 @@ namespace HivePHP;
 class Bootstrap
 {
     protected array $providers = [
+        \App\Providers\AppServiceProvider::class,
+
         \HivePHP\Providers\ConfigServiceProvider::class,
         \HivePHP\Providers\RouteServiceProvider::class,
-        \HivePHP\Providers\TwigServiceProvider::class
+        \HivePHP\Providers\TwigServiceProvider::class,
     ];
 
     protected array $instances = [];
 
     public function __construct(protected Container $container){}
 
-    /**
-     * @return void
-     */
     public function run(): void
     {
         $this->registerProviders();

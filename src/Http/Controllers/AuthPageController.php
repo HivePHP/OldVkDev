@@ -9,23 +9,20 @@
 declare(strict_types=1);
 
 namespace App\Http\Controllers;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Error\SyntaxError;
 
 class AuthPageController extends Controller
 {
-    /**
-     * @throws RuntimeError
-     * @throws SyntaxError
-     * @throws LoaderError
-     */
     public function showLogin(): void
     {
-       $sitName = $this->config->get('app.name');
-
        $this->render('auth/login.twig', [
-           'sitName' => $sitName,
+           'title' => 'Авторизация',
        ]);
+    }
+
+    public function showRegister(): void
+    {
+        $this->render('auth/register.twig', [
+            'title' => 'Регистрация',
+        ]);
     }
 }

@@ -1,0 +1,30 @@
+body, html{
+    background: #fff;
+    color: #5a7ca0;
+    margin: 0;
+    padding: 0;
+    direction: ltr;
+    font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+    font-size: 11px;
+    line-height: 1.182;
+    font-weight: normal;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*Container*/
+.container{
+    width: 791px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+.header{
+    width: 791px;
+    height: 40px;
+    background: linear-gradient(to right, #4c6e92, #5a7ca0);
+    border-radius: 0 0 8px 8px;
+}

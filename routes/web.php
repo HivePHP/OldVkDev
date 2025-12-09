@@ -12,6 +12,7 @@
 use App\Http\Controllers\AuthPageController;
 
 $router->get('/', [AuthPageController::class, 'showLogin']);
+$router->get('/register', [AuthPageController::class, 'showRegister']);
 
 
 
