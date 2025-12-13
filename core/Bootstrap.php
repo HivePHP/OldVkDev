@@ -19,6 +19,7 @@ class Bootstrap
         \HivePHP\Providers\ConfigServiceProvider::class,
         \HivePHP\Providers\RouteServiceProvider::class,
         \HivePHP\Providers\TwigServiceProvider::class,
+        \HivePHP\Providers\LayoutServiceProvider::class,
     ];
 
     protected array $instances = [];

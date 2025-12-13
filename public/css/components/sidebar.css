@@ -1,0 +1,86 @@
+
+/* Профиль */
+.profile-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #f7f8fa;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+}
+
+.info .name {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.edit-btn {
+    font-size: 12px;
+    padding: 3px 7px;
+    background: #eceff3;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.edit-btn:hover {
+    background: #dde2e8;
+}
+
+/* Меню */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    font-size: 15px;
+    transition: 0.25s ease;
+}
+
+.menu-item:hover {
+    background: #f2f4f7;
+    transform: translateX(3px);
+}
+
+/* Иконки SVG */
+.icon {
+    width: 22px;
+    height: 22px;
+    fill: #5d80ff;
+    opacity: 0.9;
+    transition: 0.25s;
+}
+
+.menu-item:hover .icon {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+/* Бейджи */
+.badge {
+    margin-left: auto;
+    background: #ff3b4f;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 1px 4px rgba(255,0,0,0.4);
+}

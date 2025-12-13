@@ -7,9 +7,10 @@
  *
  */
 
-declare(strict_types=1);
 
+namespace App\Models;
 
-return [
-    'name' => 'LovlyEngine',
-];
+class User
+{
+
+}

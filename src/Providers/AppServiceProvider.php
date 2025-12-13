@@ -12,6 +12,7 @@ namespace App\Providers;
 
 use HivePHP\Container;
 use HivePHP\Providers\ServiceProviderInterface;
+use HivePHP\Services\TwigService;
 use HivePHP\Support\AssetManager;
 
 class AppServiceProvider implements ServiceProviderInterface
@@ -24,8 +25,19 @@ class AppServiceProvider implements ServiceProviderInterface
     public function boot(Container $container): void
     {
         $assets = $container->get(AssetManager::class);
+        $twig = $container->get(TwigService::class);
+
+        /* Глобальный вывод в шаблоны*/
+        /*$twig->addGlobal('site', [
+            '{}}' => Configs::get('app.site_name'),
+        ]);*/
 
         // Global Css
         $assets->css('main.css');
+        $assets->css('components/button.css');
+        $assets->css('components/variables.css');
+        $assets->css('components/sidebar.css');
+
+        // Global Js
     }
 }

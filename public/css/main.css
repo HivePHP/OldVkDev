@@ -1,30 +1,147 @@
-body, html{
-    background: #fff;
-    color: #5a7ca0;
+body {
     margin: 0;
     padding: 0;
-    direction: ltr;
-    font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
-    font-size: 11px;
-    line-height: 1.182;
-    font-weight: normal;
-    -webkit-font-smoothing: subpixel-antialiased;
+    font-family: Inter, Arial, sans-serif;
+    background: #f0f2f5;
+    color:#333333;
 }
+*{box-sizing: border-box}
 
-* {
-    box-sizing: border-box;
-}
+button{cursor: pointer;border: none;transition: all 0.25s ease;}
+a{text-decoration: none;transition: all 0.25s ease;}
+input, textarea{transition: all 0.25s ease;}
 
-/*Container*/
-.container{
-    width: 791px;
+/* CONTAINER */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* ← ЭТО ГЛАВНОЕ */
+    width: 1000px;
     margin: 0 auto;
+}
+
+/* FOOTER HOME */
+.footer-home{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 20px;
+    border-top: 1px solid #ddd;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copy-footer-home {
+    font-size: 14px;
+    color: #333;
+}
+
+.button-footer-home a{
+    margin-left: 20px;
+    text-decoration: none;
+    color: #b4b4b4;
+    font-size: 14px;
+}
+
+.button-footer-home a:hover{
+    color: #8f8f8f;
+}
+
+/* OR DRIVER */
+.or-block {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 25px 0;
+    gap: 15px;
+}
+
+.or-block span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8c8c8c;
+    letter-spacing: 1px;
+}
+
+.or-line {
+    flex-grow: 1;
+    height: 1px;
+
+    /* плавный градиент как в Facebook/Instagram */
+    background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0)
+    );
+
+    border-radius: 2px;
 }
 
 /* HEADER */
 .header{
-    width: 791px;
-    height: 40px;
-    background: linear-gradient(to right, #4c6e92, #5a7ca0);
-    border-radius: 0 0 8px 8px;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    height: 50px;
+    top: 0;
+    z-index: 10;
+}
+
+.header .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left-group {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo a{
+    font-weight: 700;
+    font-size: 22px;
+    color: #1877f2;
+}
+
+.logo a:hover{
+    color: #2f85f3;
+}
+
+.search {
+    width: 200px;
+    height: 28px;
+    background: #f1f5f9;
+    border-radius: 6px;
+}
+
+.menu-head {
+    display: flex;
+    align-items: center;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width: 260px;
+    padding: 18px;
+    background: #fff;
+    border-right: 1px solid #e8e8e8;
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.content{
+    width: 690px;
+    height: 400px;
+    background-color: #1877f2;
 }

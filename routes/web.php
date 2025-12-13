@@ -9,11 +9,16 @@
 
 /** @var HivePHP\Http\Router $router */
 
-use App\Http\Controllers\AuthPageController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 
-$router->get('/', [AuthPageController::class, 'showLogin']);
-$router->get('/register', [AuthPageController::class, 'showRegister']);
+$router->get('/', [HomeController::class, 'showLogin']);
+$router->get('/reg', [HomeController::class, 'showRegister']);
+$router->get('/id{id:\d+}', [ProfileController::class, 'show']);
 
+$router->post('/reg', [AuthController::class, 'register']);
+$router->post('/login', [AuthController::class, 'login']);
 
 
 //use App\Http\Controllers\AuthController;
@@ -32,9 +37,9 @@ $router->get('/register', [AuthPageController::class, 'showRegister']);
 //
 //
 ///* AUTH ONLY */
-//$router->middleware('auth')->get('/editprofile', [ProfileController::class, 'editProfile']);
-//$router->middleware('auth')->get('/logout', [AuthController::class, 'logout']);
-//$router->middleware('auth')->post('/user/statusUpdate', [UserController::class, 'statusUpdate']);
+//$router->middleware('join')->get('/editprofile', [ProfileController::class, 'editProfile']);
+//$router->middleware('join')->get('/logout', [AuthController::class, 'logout']);
+//$router->middleware('join')->post('/user/statusUpdate', [UserController::class, 'statusUpdate']);
 //
 ///* PUBLIC ROUTES */
 //$router->get('/id{id:\d+}', [UserController::class, 'show']);

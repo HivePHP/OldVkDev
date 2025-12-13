@@ -36,9 +36,5 @@ class TwigServiceProvider implements ServiceProviderInterface
 
     public function boot(Container $container): void
     {
-        /** @var TwigService $twigFactory */
-        //$twigFactory = $container->get(TwigFactory::class);
-        //$twig = $twigFactory->get();
-
     }
 }

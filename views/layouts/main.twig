@@ -5,38 +5,81 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     {{ css() }}
-    <title>{{ title }} - {{ siteName }}</title>
+    <title>Document34</title>
 </head>
 <body>
 
-<div class="container">
     <header class="header">
-        ddddd
-    </header>
-    <div class="wrapper">
-        <div class="left-content">
+        <div class="container">
+
+            <!-- Левая группа -->
+            <div class="left-group">
+                <div class="logo">
+                    <a href="">LOVLYENGINE</a>
+                </div>
+                <div class="search"></div>
+            </div>
+
+            <!-- Меню справа -->
+            <div class="menu-head">
+                MENU
+            </div>
 
         </div>
-        <div class="right content">
+    </header>
 
+
+    <div class="container">
+        <div class="sidebar">
+
+            <div class="profile-block">
+                <img src="" class="avatar">
+                <div class="info">
+                    <div class="name">Моя страница</div>
+                    <button class="edit-btn">Ред.</button>
+                </div>
+            </div>
+
+            <ul class="menu">
+
+                <li class="menu-item">
+                    <svg class="icon"><use href="/img/sprite/sidebar.svg?v=1#icon-news"></use></svg>
+                    <span>Новости</span>
+                    <span class="badge">3</span>
+                </li>
+
+                <li class="menu-item">
+                    <svg class="icon"><use href="/img/sprite/sidebar.svg?v=1#icon-msg"></use></svg>
+                    <span>Сообщения</span>
+                    <span class="badge">12</span>
+                </li>
+
+                <li class="menu-item">
+                    <svg class="icon"><use href="/img/sprite/sidebar.svg?v=1#icon-friends"></use></svg>
+                    <span>Друзья</span>
+                    <span class="badge">1</span>
+                </li>
+
+                <li class="menu-item">
+                    <svg class="icon"><use href="/img/sprite/sidebar.svg?v=1#icon-groups"></use></svg>
+                    <span>Группы</span>
+                </li>
+
+                <li class="menu-item">
+                    <svg class="icon"><use href="/img/sprite/sidebar.svg?v=1#icon-photos"></use></svg>
+                    <span>Фотографии</span>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="content">
+            {% block content %}{% endblock %}
         </div>
     </div>
-</div>
 
-
-
-
-
-
-
-
-
-
-
-{#        {% block content %}{% endblock %}#}
-
-
-    {{ js() }}
+{{ js() }}
 </body>
 </html>
